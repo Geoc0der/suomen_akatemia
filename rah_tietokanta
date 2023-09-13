@@ -1,11 +1,1 @@
-CREATE TABLE rahoitukset_2001_2023_2
-(
-    haku VARCHAR(100),
-    organisaatio VARCHAR(100),
-    tutkimusaihe VARCHAR(200),
-    hakija VARCHAR(100),
-    "päätös" VARCHAR(100),
-    pvm date,
-    rahoituskausi VARCHAR(100),
-    rahoitus integer
-)
+CREATE TABLE rah_testi_8(haku varchar(400),organisaatio varchar(400),tutkimusaihe varchar(700),hakija varchar(400),päätös varchar(400),vuosi varchar(400),rahoitus varchar(400));
