@@ -1,20 +1,11 @@
-- Table: public.rahoitukset_2001_2023
-
--- DROP TABLE IF EXISTS public.rahoitukset_2001_2023;
-
-CREATE TABLE IF NOT EXISTS public.rahoitukset_2001_2023
+CREATE TABLE rahoitukset_2001_2023_2
 (
-    haku character varying(100) COLLATE pg_catalog."default",
-    organisaatio character varying(100) COLLATE pg_catalog."default",
-    tutkimusaihe character varying(200) COLLATE pg_catalog."default",
-    hakija character varying(100) COLLATE pg_catalog."default",
-    "päätös" integer,
+    haku VARCHAR(100),
+    organisaatio VARCHAR(100),
+    tutkimusaihe VARCHAR(200),
+    hakija VARCHAR(100),
+    "päätös" VARCHAR(100),
     pvm date,
-    rahoituskausi character varying(100) COLLATE pg_catalog."default",
+    rahoituskausi VARCHAR(100),
     rahoitus integer
 )
-
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.rahoitukset_2001_2023
-    OWNER to nimipoistettu;
