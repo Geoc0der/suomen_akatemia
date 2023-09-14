@@ -1,1 +1,4 @@
-CREATE TABLE rah_testi_8(haku varchar(400),organisaatio varchar(400),tutkimusaihe varchar(700),hakija varchar(400),päätös varchar(400),vuosi varchar(400),rahoitus varchar(400));
+--kuinka koko data vuosilta 2001-2023 tuodaan csv-muodossa tietokantaan käyttäen ogr2ogr-toimintoa. cd-toiminnolla tulee ensin vaihtaa kansio
+--siksi, jossa csv sijaitsee
+
+ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=suomen_akatemia password=salasana tähän" 2001-2023.csv -nln suomen_akatemia_kaikki_2001-2023 -oo AUTODETECT_TYPE=YES
