@@ -2,3 +2,12 @@
 --siksi, jossa csv sijaitsee
 
 ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=suomen_akatemia password=salasana tähän" 2001-2023.csv -nln suomen_akatemia_kaikki_2001-2023 -oo AUTODETECT_TYPE=YES
+
+delete from suomen_akatemia_bioalat_2001_2023
+where ogc_fid = 1;
+
+update suomen_akatemia_bioalat_2001_2023
+set rahoitus_int = field_8::integer;
+
+update suomen_akatemia_bioalat_2001_2023
+set field_8 = replace(field_8,' ','');
