@@ -3,11 +3,14 @@
 
 ogr2ogr -f "PostgreSQL" PG:"host=localhost user=postgres dbname=suomen_akatemia password=salasana tähän" 2001-2023.csv -nln suomen_akatemia_kaikki_2001-2023 -oo AUTODETECT_TYPE=YES
 
+--kuinka deletoidaan turha rivi
 delete from suomen_akatemia_bioalat_2001_2023
 where ogc_fid = 1;
 
+-- kuinka muutetaan string-muotoinen sarake kokonaisluvuksi, kun uusi sarake on jo olemassa
 update suomen_akatemia_bioalat_2001_2023
 set rahoitus_int = field_8::integer;
 
+-- kuinka poistetaan string-sarakkeesta välilyönnit
 update suomen_akatemia_bioalat_2001_2023
 set field_8 = replace(field_8,' ','');
